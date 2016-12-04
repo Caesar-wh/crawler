@@ -59,16 +59,16 @@ def onAppliedClickCallBack():
     global epsilon
     alpha = float(text_of_alpha.get())
     epsilon = float(text_of_epsilon.get())
-    #print(alpha, epsilon)
+    # print(alpha, epsilon)
     crawler.alpha = alpha
     crawler.epsilon = epsilon
     text_of_alpha.set(alpha)
     text_of_epsilon.set(epsilon)
 
+
 def onClearClickCallBack():
     cvs.delete(tk.ALL)
-    crawler.go_home(alpha,epsilon,discount)
-
+    crawler.go_home(alpha, epsilon, discount)
 
 
 top = tk.Tk()
@@ -80,27 +80,26 @@ labelHello.pack()
 start_button = tk.Button(top, text="开始", command=onStartClickCallBack)
 start_button.pack()
 
-label_alpha = tk.Label(top,text="alpha")
+label_alpha = tk.Label(top, text="alpha")
 label_alpha.pack()
 text_of_alpha = tk.StringVar()
 text_of_alpha.set(alpha)
 alpha_entry = tk.Entry(top, textvariable=text_of_alpha)
 alpha_entry.pack()
 
-label_epsilon = tk.Label(top,text="epsilon")
+label_epsilon = tk.Label(top, text="epsilon")
 label_epsilon.pack()
 text_of_epsilon = tk.StringVar()
 text_of_epsilon.set(epsilon)
 epsilon_entry = tk.Entry(top, textvariable=text_of_epsilon)
 epsilon_entry.pack()
 
-label_discount = tk.Label(top,text="discount")
+label_discount = tk.Label(top, text="discount")
 label_discount.pack()
 text_of_discount = tk.StringVar()
 text_of_discount.set(discount)
 discount_entry = tk.Entry(top, textvariable=text_of_discount)
 discount_entry.pack()
-
 
 apply_button = tk.Button(top, text='应用', command=onAppliedClickCallBack)
 apply_button.pack()
