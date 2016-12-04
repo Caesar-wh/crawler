@@ -54,3 +54,6 @@ class QLearningRobot(Robot):
         self.currentPosX = new_x
         self.theta1, self.theta2 = new_theta1, new_theta2
         self.update_all_pos()
+
+    def go_home(self,alpha,discount,epsilon):
+        self.__init__(alpha, discount, epsilon)
