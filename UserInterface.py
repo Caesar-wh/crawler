@@ -1,7 +1,7 @@
 import tkinter as tk
 import QLearningRobot
 import threading
-
+import time
 CANVAS_WIDTH = 900
 CANVAS_HEIGHT = 300
 alpha, discount, epsilon = 0.5, 0.2, 0.5
@@ -9,10 +9,14 @@ crawler = QLearningRobot.QLearningRobot(alpha=alpha, discount=discount, epsilon=
 runningThread = None
 thread_stop = False
 
+for i in range(10000):
+    crawler.run_one_step()
+    crawler.currentPosX = 50
 
 def update_display():
     vec = crawler.get_all_positions_in_world_frame()
     # 清除现有图案
+    time.sleep(0.2)
     cvs.delete(tk.ALL)
     # 直线AB
     cvs.create_line(vec[0][0], CANVAS_HEIGHT - vec[0][1], vec[1][0], CANVAS_HEIGHT - vec[1][1], fill='black')
